@@ -6,6 +6,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {FormsModule} from '@angular/forms';
+import {MatTreeModule} from '@angular/material/tree';
 
 @Component({
     selector: 'app-root',
@@ -18,7 +19,8 @@ import {FormsModule} from '@angular/forms';
       MatIconModule,
       MatToolbarModule,
       MatCheckboxModule,
-      FormsModule
+      FormsModule,
+      MatTreeModule
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',

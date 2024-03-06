@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatTreeModule } from '@angular/material/tree';
 
 export interface Task {
   name: string;
@@ -13,7 +14,7 @@ export interface Task {
 @Component({
   selector: 'app-appwins',
   standalone: true,
-  imports: [MatCheckboxModule],
+  imports: [MatCheckboxModule, MatTreeModule],
   templateUrl: './appwins.component.html',
   styleUrl: './appwins.component.css'
 })
@@ -29,5 +30,5 @@ export class AppwinsComponent {
     ],
   };
 
-  
+
 }
