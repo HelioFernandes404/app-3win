@@ -2,3 +2,9 @@
     display: flex;
     justify-content: space-between;
 }
+
+.container {
+    width: 1280px;
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    /* Outras propriedades que você queira aplicar ao seu container */
+}

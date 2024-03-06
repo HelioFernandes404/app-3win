@@ -4,6 +4,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {FormsModule} from '@angular/forms';
+
 @Component({
     selector: 'app-root',
     standalone: true,
@@ -13,7 +16,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
       RouterLinkActive,
       MatButtonModule,
       MatIconModule,
-      MatToolbarModule
+      MatToolbarModule,
+      MatCheckboxModule,
+      FormsModule
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
