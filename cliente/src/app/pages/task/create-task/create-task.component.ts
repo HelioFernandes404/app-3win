@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import {TaskService} from "../../services/task.service";
+import {TaskService} from "../../../services/task.service";
 @Component({
   selector: 'app-create-task',
   templateUrl: './create-task.component.html',
@@ -32,14 +32,5 @@ export class CreateTaskComponent {
     );
   }
 
-  public getList() {
-    this.taskService.getList().subscribe(
-      tasks => {
-        console.log(tasks)
-      },
-      error => {
-        console.error('Erro ao obter a lista de tarefas:', error);
-      }
-    );
-  }
+
 }

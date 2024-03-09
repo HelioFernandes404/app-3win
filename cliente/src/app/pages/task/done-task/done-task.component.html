@@ -1,0 +1,11 @@
+<section class="example-section">
+    <span class="example-list-section">
+        <mat-checkbox
+        *ngFor="let listTasks of listTask; index as i"
+            class="example-margin"
+            
+        >
+            {{ listTasks.name }}
+        </mat-checkbox>
+    </span>
+</section>
