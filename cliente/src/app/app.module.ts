@@ -18,7 +18,7 @@ import { CreateTaskComponent } from './pages/create-task/create-task.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
