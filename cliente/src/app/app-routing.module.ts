@@ -1,13 +1,10 @@
-
-import { LoginComponent } from './pages/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateTaskComponent } from './pages/task/create-task/create-task.component';
+import { HomeTaskComponent } from './pages/task/_home-task/home-task.component';
 
 const routes: Routes = [
-  {path:"", redirectTo:"login",pathMatch: 'full'},
-  {path:"login", component:LoginComponent},
-  {path:"createnewtask",component:CreateTaskComponent}
+  {path:"", redirectTo:"",pathMatch: 'full'},
+  {path:"", component:HomeTaskComponent},
 ];
 
 @NgModule({

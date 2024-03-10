@@ -1,38 +1,46 @@
-<section class="example-section">
-    <mat-checkbox class="example-margin">Check me!</mat-checkbox>
-    <mat-checkbox class="example-margin" [disabled]="true"
-        >Disabled</mat-checkbox
-    >
-</section>
+<div class="container">
 
-<section class="example-section">
-    <span class="example-list-section">
+
+  <div class="container">
+
+    <mat-form-field
+      [formGroup]="newTaskFrom"
+      (ngSubmit)="enviar()"
+      appearance="outline"
+    >
+      <mat-label>name task</mat-label>
+      <input
+        id="name"
+        type="text"
+        formControlName="nameTask"
+        matInput
+        placeholder="Placeholder"
+      />
+    </mat-form-field>
+
+    <button
+      class="btnSave"
+      mat-stroked-button
+      color="primary"
+      type="submit"
+      (click)="enviar()"
+      [disabled]="!newTaskFrom.valid"
+    >
+      SAVE
+    </button>
+
+    <div>
+      <div>
         <mat-checkbox
-        *ngFor="let listTasks of listTask; index as i"
-            class="example-margin"
-            [color]="task.color"
-            [indeterminate]="someComplete()"
-            (change)="setAll($event.checked)"
+          *ngFor="let listTasks of listTask; index as i"
+          class=""
         >
             {{ listTasks.name }}
         </mat-checkbox>
-    </span>
-</section>
+      </div>
+    </div>
 
-<!--
-<span class="example-list-section">
-    <ul>
-        @for (subtask of task.subtasks; track subtask) {
-        <li>
-            <mat-checkbox
-                [(ngModel)]="subtask.completed"
-                [color]="subtask.color"
-                (ngModelChange)="updateAllComplete()"
-            >
-                {{ subtask.name }}
-            </mat-checkbox>
-        </li>
-        }
-    </ul>
-</span> 
--->
+  </div>
+</div>
+
+

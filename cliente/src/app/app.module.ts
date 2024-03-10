@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { CreateTaskComponent } from './pages/task/create-task/create-task.component';
-import { ListTaskComponent } from './pages/task/list-task/list-task.component';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,30 +14,30 @@ import { MatIconModule } from '@angular/material/icon';
 import { HomeTaskComponent } from './pages/task/_home-task/home-task.component';
 import { ThemePalette } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { DoneTaskComponent } from './pages/task/done-task/done-task.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         LoginComponent,
-        CreateTaskComponent,
-        ListTaskComponent,
         HomeTaskComponent,
-        DoneTaskComponent,
+        HeaderComponent,
     ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        MatButtonModule,
-        BrowserAnimationsModule,
-        MatCheckboxModule,
-        FormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatIconModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatToolbarModule
+  ],
     providers: [],
     bootstrap: [AppComponent],
 })

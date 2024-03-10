@@ -1,23 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Roboto&family=Varela+Round&display=swap');
-*{
-margin: 0;
-padding: 0;
-font-family: 'Varela Round','Roboto','Inter';
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Varela Round', 'Roboto', 'Inter';
 }
 
-button{
+a {
+  text-decoration: none;
+}
+
+button {
   cursor: pointer;
 }
-$primary-color-green-dark:#008046; //cor para o background da nav.
-$primary-color-green:#6BB947; //cor primaria de verde
-$secondary-color-green:#85DF5B; //cor secundaria de verde
-$tertiary-color-green:#5B983F;
 
-$primary-color-grey:#DDDDDD;
-$secondary-color-grey:#F5F5F5;
+html, body {
+  height: 100%;
+}
 
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.container {
+  width: 100%; /* Default width: 100% of screen width */
+  max-width: 1000px; /* Set the maximum width to 1280px */
+  margin: 0 auto; /* Center the container horizontally */
+}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { TaskService } from 'src/app/services/task.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 export interface Task {
     name: string;
@@ -15,47 +16,8 @@ export interface Task {
     styleUrls: ['./home-task.component.scss'],
 })
 export class HomeTaskComponent {
-    task: Task = {
-        name: 'Indeterminate',
-        completed: false,
-        color: 'primary',
-        subtasks: [
-            { name: 'Primary', completed: false, color: 'primary' },
-            { name: 'Accent', completed: false, color: 'accent' },
-            { name: 'Warn', completed: false, color: 'warn' },
-        ],
-    };
-
-    allComplete: boolean = false;
-
-    updateAllComplete() {
-        this.allComplete =
-            this.task.subtasks != null &&
-            this.task.subtasks.every(t => t.completed);
-    }
-
-    someComplete(): boolean {
-        if (this.task.subtasks == null) {
-            return false;
-        }
-        return (
-            this.task.subtasks.filter(t => t.completed).length > 0 &&
-            !this.allComplete
-        );
-    }
-
-    setAll(completed: boolean) {
-        this.allComplete = completed;
-        if (this.task.subtasks == null) {
-            return;
-        }
-        this.task.subtasks.forEach(t => (t.completed = completed));
-    }
-
-    
   constructor(private taskService: TaskService) {}
-
-  listTask : any = [] //variavel da lita
+  listTask : any = [] //variable the list
 
   public getList() {
     this.taskService.getList().subscribe(
@@ -72,4 +34,31 @@ export class HomeTaskComponent {
   ngOnInit() {
     this.getList();
   }
+
+
+
+  newTaskFrom = new FormGroup(
+    {
+      nameTask: new FormControl(''),
+    });
+
+
+  public enviar(): void {
+    let {
+      nameTask,
+    } = this.newTaskFrom.value;
+
+    this.taskService.saveTask(
+      nameTask
+    ).subscribe(
+      (res) => {
+        window.location.reload();
+        console.log('success')
+      },
+      error => {
+        console.log('error')
+      }
+    );
+  }
+
 }
