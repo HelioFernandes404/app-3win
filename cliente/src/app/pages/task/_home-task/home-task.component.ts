@@ -61,4 +61,7 @@ export class HomeTaskComponent {
     );
   }
 
+  deleteByTask() {
+    console.log('deleter')
+  }
 }

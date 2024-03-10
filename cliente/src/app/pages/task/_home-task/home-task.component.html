@@ -1,43 +1,48 @@
 <div class="container">
 
 
-  <div class="container">
+  <div class="mt-40">
+    <div class="content_fromTask">
+      <mat-form-field
+        [formGroup]="newTaskFrom"
+        (ngSubmit)="enviar()"
+        appearance="outline"
+      >
+        <mat-label>name task</mat-label>
+        <input
+          id="name"
+          type="text"
+          formControlName="nameTask"
+          matInput
+          placeholder="Placeholder"
+        />
+      </mat-form-field>
 
-    <mat-form-field
-      [formGroup]="newTaskFrom"
-      (ngSubmit)="enviar()"
-      appearance="outline"
+      <button
+        class="btnSave"
+        mat-stroked-button
+        color="primary"
+        type="submit"
+        (click)="enviar()"
+        [disabled]="!newTaskFrom.valid"
+      >
+        SAVE
+      </button>
+    </div>
+
+
+    <div class="content_listTodo"
+         *ngFor="let tasks of listTask"
     >
-      <mat-label>name task</mat-label>
-      <input
-        id="name"
-        type="text"
-        formControlName="nameTask"
-        matInput
-        placeholder="Placeholder"
-      />
-    </mat-form-field>
-
-    <button
-      class="btnSave"
-      mat-stroked-button
-      color="primary"
-      type="submit"
-      (click)="enviar()"
-      [disabled]="!newTaskFrom.valid"
-    >
-      SAVE
-    </button>
-
-    <div>
       <div>
-        <mat-checkbox
-          *ngFor="let listTasks of listTask; index as i"
-          class=""
-        >
-            {{ listTasks.name }}
-        </mat-checkbox>
+        {{tasks.name}}
       </div>
+      <button class="btnDelete"
+              mat-stroked-button
+              color="accent"
+      >
+        delete
+      </button>
     </div>
 
   </div>
