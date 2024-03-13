@@ -35,4 +35,10 @@ public class TaskController {
 
         return ResponseEntity.created(uri).body(en);
     }
+
+    @DeleteMapping(value = "/{id}" ,produces="application/json")
+    public ResponseEntity<Void> delete(@PathVariable Integer id) throws Exception {
+        taskServices.deteleById(id);
+        return ResponseEntity.noContent().build();
+    }
 }
