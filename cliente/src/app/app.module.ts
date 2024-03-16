@@ -3,41 +3,47 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/login/login.component';
+import { HomeComponent } from './pages/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CreateTaskComponent } from './pages/task/create-task/create-task.component';
+import { ListTaskComponent } from './pages/task/list-task/list-task.component';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { HomeTaskComponent } from './pages/task/_home-task/home-task.component';
-import { ThemePalette } from '@angular/material/core';
+
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { HeaderComponent } from './components/header/header.component';
+import { DoneTaskComponent } from './pages/task/done-task/done-task.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { SnackComponent } from './components/snack/snack.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        LoginComponent,
+        HomeComponent,
+        CreateTaskComponent,
+        ListTaskComponent,
         HomeTaskComponent,
-        HeaderComponent,
+        DoneTaskComponent,
+        SnackComponent,
     ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatButtonModule,
-    BrowserAnimationsModule,
-    MatCheckboxModule,
-    FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    MatToolbarModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatButtonModule,
+        BrowserAnimationsModule,
+        MatCheckboxModule,
+        FormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatIconModule,
+      MatSnackBarModule,
+    ],
     providers: [],
     bootstrap: [AppComponent],
 })

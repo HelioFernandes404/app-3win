@@ -1,0 +1,47 @@
+
+<mat-form-field>
+  <mat-label>Snack bar duration (seconds)</mat-label>
+  <input type="number" [(ngModel)]="durationInSeconds" matInput>
+</mat-form-field>
+
+
+
+<div class="containerSave">
+  <mat-form-field
+  [formGroup]="newTaskFrom"
+  (ngSubmit)="enviar()"
+  appearance="outline"
+>
+  <mat-label>name task</mat-label>
+  <input
+      id="name"
+      type="text"
+      formControlName="nameTask"
+      matInput
+      placeholder="Placeholder"
+  />
+</mat-form-field>
+
+  <button mat-stroked-button (click)="openSnackBar()" aria-label="Show an example snack-bar">
+    Pizza party
+  </button>
+<button
+  class="btnSave"
+  mat-stroked-button
+  color="primary"
+  type="submit"
+  (click)="enviar()"
+  [disabled]="!newTaskFrom.valid"
+>
+  SAVE
+</button>
+
+<div>
+  <h1>my list to-do</h1>
+  <app-list-task></app-list-task>
+</div>
+
+</div>
+
+
+<app-home-task></app-home-task>
